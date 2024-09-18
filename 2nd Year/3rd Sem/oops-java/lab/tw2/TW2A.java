@@ -11,19 +11,26 @@ public class TW2A {
         System.out.print("Enter second word: ");
         String s2 = input.next().toLowerCase();
 
-        if (isAnagram(s1, s2)) {
-            System.out.println("Anagram");
-        } else {
-            System.out.println("Not Anagram");
-        }
+        isAnagram(s1, s2);
     }
 
-    static boolean isAnagram(String s1, String s2) {
+    static void isAnagram(String s1, String s2) {
+        if(s1.length() != s2.length()) {
+            System.out.println("Words length are not equal, Strings are Not Anagram");
+            System.exit(0);
+        }
+
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
         String s3 = sort(c1);
         String s4 = sort(c2);
-        return s3.equals(s4);
+        if(s3.equals(s4)) {
+            System.out.println(s3 + " == " + s4);
+            System.out.println(s1 + " and " + s2 + " are Anagram.");
+        } else {
+            System.out.println(s3 + " == " + s4);
+            System.out.println(s1 + " and " + s2 + " are Not Anagram.");
+        }
     }
 
     static String sort(char[] arr) {
