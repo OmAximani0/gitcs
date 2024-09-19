@@ -1,2 +1,4 @@
 # Ignore compiled java files(byte code)
 *.class
+
+Makefile
