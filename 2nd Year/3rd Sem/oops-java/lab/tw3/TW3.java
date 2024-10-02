@@ -15,7 +15,7 @@ class MyBankAccount {
         System.out.print("Enter account number: ");
         this.accountNumber = in.nextInt();
 
-        System.out.print("Enter account type: ");
+        System.out.print("Enter account type (SB/FD/RD): ");
         this.accontType = in.next();
 
         System.out.print("Enter name: ");
@@ -95,7 +95,7 @@ public class TW3 {
         a1.computeInterest(3);
         a1.withdrawAmount(300);
 
-        System.out.println("\n------ For default constructor -------");
+        System.out.println("\n------ For parameterised constructor -------");
         MyBankAccount a2 = new MyBankAccount(1234, "FD", "Aditya", 4000);
         MyBankAccount a3 = new MyBankAccount(12345, "RD", "Xavier", 4000);
 
