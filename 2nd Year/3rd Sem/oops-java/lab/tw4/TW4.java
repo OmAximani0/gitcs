@@ -67,37 +67,19 @@ class PartTimeEmployee extends Employee {
 	public void calculateSalary() {
 		switch(this.qualification) {
 		case "BE":
-			if(this.experience <= 5) {
-				this.ratePerHour = 300;
-			}
-			else if(this.experience <= 10) {
-				this.ratePerHour = 400;
-			}
-			else {
-				this.ratePerHour = 500;
-			}
+			if(this.experience <= 5) this.ratePerHour = 300;
+			else if(this.experience <= 10) this.ratePerHour = 400;
+			else this.ratePerHour = 500;
 			break;
 		case "MTech":
-			if(this.experience <= 5) {
-				this.ratePerHour = 500;
-			}
-			else if(this.experience <= 10) {
-				this.ratePerHour = 700;
-			}
-			else {
-				this.ratePerHour = 1000;
-			}
+			if(this.experience <= 5) this.ratePerHour = 500;
+			else if(this.experience <= 10) this.ratePerHour = 700;
+			else this.ratePerHour = 1000;
 			break;
 		case "PhD":
-			if(this.experience <= 5) {
-				this.ratePerHour = 800;
-			}
-			else if(this.experience <= 10) {
-				this.ratePerHour = 1200;
-			}
-			else {
-				this.ratePerHour = 1500;
-			}
+			if(this.experience <= 5) this.ratePerHour = 800;
+			else if(this.experience <= 10) this.ratePerHour = 1200;
+			else this.ratePerHour = 1500;
 			break;
 		}
 		this.salary = this.workingHours * this.ratePerHour;
@@ -107,13 +89,23 @@ class PartTimeEmployee extends Employee {
 
 public class TW4 {
 	public static void main(String[] args) {
-		FullTimeEmployee f = new FullTimeEmployee(
+		FullTimeEmployee f1 = new FullTimeEmployee(
 			"Om", 20, "Belgaum", "Male", 5000
 		);
-		PartTimeEmployee p = new PartTimeEmployee(
+
+		PartTimeEmployee p1 = new PartTimeEmployee(
 			"Siddhant", 20, "Belgaum", "Male", "BE", 4, 8
 		);
-		f.calculateSalary();
-		p.calculateSalary();
+		PartTimeEmployee p2 = new PartTimeEmployee(
+			"Xavier", 20, "Belgaum", "Male", "MTech", 4, 8
+		);
+		PartTimeEmployee p3 = new PartTimeEmployee(
+			"Suraj", 20, "Belgaum", "Male", "PhD", 4, 8
+		);
+
+		f1.calculateSalary();
+		p1.calculateSalary();
+		p2.calculateSalary();
+		p3.calculateSalary();
 	}
 }
