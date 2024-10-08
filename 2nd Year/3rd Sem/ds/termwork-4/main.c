@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 100
+#define SIZE 3
 
-int queue[MAX];
+int queue[SIZE];
 int front = -1;
 int rear = -1;
-void enqueue(int);
+
+void enqueue();
 void dequeue();
 void display();
 
@@ -15,14 +16,13 @@ int main() {
 	int element;
 
 	while (choice != 4) {
-		// printf("REAR: %d, FRONT: %d", rear, front);
-		printf("\n1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
+		//printf("%d, %d", front, rear);
+		printf("\n1.Enqueue\t2.Dequeue\n3.Display\t4.Exit\n");
 		printf("Enter your choice : ");
-		scanf("%d", & choice); switch (choice) {
+		scanf("%d", &choice);
+		switch (choice) {
 			case 1:
-				printf("\tEnter a number: ");
-				scanf("%d", &element);
-				enqueue(element);
+				enqueue();
 				break;
 			case 2:
 				dequeue();
@@ -39,19 +39,21 @@ int main() {
 	}
 }
 
-
-void enqueue(int ele)
+void enqueue()
 {
-	if(rear==MAX-1)
+	if(rear==SIZE-1)
 	{
 		printf("\tQueue overflow\n");
 	}
 	else
 	{
+		int element;
+		printf("\tEnter a number: ");
+		scanf("%d", &element);
 		rear=rear+1;
 		if(front == -1) front = 0;
-		queue[rear]=ele;
-		printf("\t%d inserted into the queue.\n", ele);
+		queue[rear]=element;
+		printf("\t%d inserted into the queue.\n", element);
 	}
 }
 
@@ -62,6 +64,7 @@ void dequeue()
 	if(front > rear)
 	{
 		printf("\tQueue underflow\n");
+		return;
 	}
 	else
 	{
@@ -78,6 +81,7 @@ void display()
 	if(front > rear || front == -1)
 	{
 		printf("\tQueue underflow\n");
+		return;
 	}
 	else
 	{
