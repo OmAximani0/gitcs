@@ -68,7 +68,6 @@ class TW8 {
     public static void main(String[] args) {
         License l1 = new License();
         l1.readData();
-        System.out.println(l1.validLearnerLicense);
 
         try {
             if (l1.age < 18) {
@@ -77,7 +76,7 @@ class TW8 {
             if (l1.numberOfCases > 0) {
                 throw new AccidentCasesException(null);
             }
-            if (l1.validLearnerLicense != 'y' || l1.validLearnerLicense != 'Y') {
+            if (l1.validLearnerLicense != 'y' && l1.validLearnerLicense != 'Y') {
                 throw new InvalidLearnerLicenseException(null);
             }
             System.out.println("Congratulations! You are eligible for licese.");
