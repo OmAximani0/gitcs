@@ -1,6 +1,5 @@
 // package tw2;
 
-import static java.lang.System.exit;
 import java.util.Scanner;
 
 class Triangle {
@@ -8,7 +7,7 @@ class Triangle {
 
     void getSides() {
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter 3 sides of a traingle:");
+        System.out.print("Enter 3 sides of a traingle: ");
         a = in.nextDouble();
         b = in.nextDouble();
         c = in.nextDouble();
@@ -24,7 +23,7 @@ class Triangle {
                 System.out.println("Triangle is Scalene");
         } else {
             System.out.println("Triangle cann't be formed!");
-            exit(1);
+            System.exit(0);
         }
     }
 
