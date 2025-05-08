@@ -121,17 +121,17 @@ int main() {
 		printf("Enter your choice: ");
 		scanf("%d", &choice);
 
-		switch(choice) {
+        switch(choice) {
             case 1:
                 fifoPageReplacement(3);
-				break;
-			case 2:
-			    lruPageReplacement(3);
-				break;
-			case 3:
-			    printf("\nExiting...");
-			    return 0;
-		}
+                break;
+            case 2:
+                lruPageReplacement(3);
+                break;
+            case 3:
+                printf("\nExiting...");
+                return 0;
+        }
     }
 
     return 0;
