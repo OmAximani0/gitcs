@@ -4,3 +4,4 @@
     - [Statistics and Probability (M3)](./2nd%20Year/3rd%20Sem/m3/)
     - [M3](./2nd%20Year/3rd%20Sem/m3/)
 - [4th Sem](./2nd%20Year/4th%20Sem/)
+- [6th Sem](./3rd%20Year/6th%20Sem/cn)
